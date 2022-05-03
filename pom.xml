@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.demo.todoapi</groupId>
-	<artifactId>springboot-todo-postgres-container</artifactId>
+	<artifactId>springboot-todo-postgres-docker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>todo-api-postgres</name>
 	<description>Basic TODO API demo with SpringBoot and Postgres and build containers</description>
@@ -86,7 +86,7 @@
 				</configuration>
 			</plugin>			
 		</plugins>
-		<finalName>springboot-todo-postgres-container</finalName>
+		<finalName>springboot-todo-postgres-docker</finalName>
 	</build>
 
 </project>

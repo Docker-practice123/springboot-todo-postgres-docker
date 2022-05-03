@@ -3,6 +3,6 @@ EXPOSE 8080
 
 # Create app directory
 WORKDIR /usr/src/app
-ADD target/springboot-todo-postgres-container.jar /usr/src/app/springboot-todo-postgres-container.jar
+ADD target/springboot-todo-postgres-docker.jar /usr/src/app/springboot-todo-postgres-docker.jar
 
-ENTRYPOINT [ "java", "-jar", "springboot-todo-postgres-container.jar" ]
+ENTRYPOINT [ "java", "-jar", "springboot-todo-postgres-docker.jar" ]
