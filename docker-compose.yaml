@@ -31,7 +31,7 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
 
   api:
-    image: 'springboot-todo-postgres-container:${TODO_API_VERSION}'
+    image: 'springboot-todo-postgres-docker:${TODO_API_VERSION}'
     profiles: [ "backend" ]
     container_name: api
     ports:
