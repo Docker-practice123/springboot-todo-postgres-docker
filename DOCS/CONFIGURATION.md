@@ -11,7 +11,7 @@
 
 ## Configure settings.xml
 
-## Configuring .env file
+## Configuring .env file, this will be required for docker-compose.yaml
 
 ```bash
 # Variables for the database
@@ -34,29 +34,117 @@ IS_SHOW_SQL=true
 HOW_ANSI_OUTPUT_IS_ENABLED=ALWAYS
 ```
 
-## Configuring setting and maven settings
+## Configuring setting and maven settings create a file call variables
 
 ```bash
 # Variables for the database
-POSTGRES_USER=postgres_user
-POSTGRES_PASSWORD=SuperSecret
-POSTGRES_DB=todoappdb
+export POSTGRES_USER=postgres_user
+export POSTGRES_PASSWORD=SuperSecret
+export POSTGRES_DB=todoappdb
 
 ## Variables for the pgadmin
-PGADMIN_DEFAULT_EMAIL=user@domain.com
-PGADMIN_DEFAULT_PASSWORD=SuperSecret
+export PGADMIN_DEFAULT_EMAIL=user@domain.com
+export PGADMIN_DEFAULT_PASSWORD=SuperSecret
 
 ## Variables for api in container
-TODO_API_VERSION=0.1
-APPLICATION_PORT=8080
-SPRING_DATASOURCE_USERNAME=postgres_user
-SPRING_DATASOURCE_PASSWORD=SuperSecret
-SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/todoappdb
-IS_FORMAT_SQL=true
-IS_SHOW_SQL=true
-HOW_ANSI_OUTPUT_IS_ENABLED=ALWAYS
+export TODO_API_VERSION=0.1
+export APPLICATION_PORT=8080
+export SPRING_DATASOURCE_USERNAME=postgres_user
+export SPRING_DATASOURCE_PASSWORD=SuperSecret
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/todoappdb
+export IS_FORMAT_SQL=true
+export IS_SHOW_SQL=true
+export HOW_ANSI_OUTPUT_IS_ENABLED=ALWAYS
 ```
 
+---
+
+## Configuration on VSCode
 
 
+### In vscode use this configuration to add inse of .vscode/launch.json  . This will be for vscode runtime
+```json
+"env": {
+// Variables for the database
+    "POSTGRES_USER": "postgres_user",
+    "POSTGRES_PASSWORD":"SuperSecret",
+    "POSTGRES_DB": "todoappdb",
+
+// Variables for the pgadmin
+    "PGADMIN_DEFAULT_EMAIL": "user@domain.com",
+    "PGADMIN_DEFAULT_PASSWORD": "SuperSecret",
+
+// Variables for api in container
+    "TODO_API_VERSION": "0.1",
+    "APPLICATION_PORT": "8080",
+    "SPRING_DATASOURCE_USERNAME": "postgres_user",
+    "SPRING_DATASOURCE_PASSWORD": "SuperSecret",
+    "SPRING_DATASOURCE_URL": "jdbc:postgresql://localhost:5432/todoappdb",
+    "IS_FORMAT_SQL": true,
+    "IS_SHOW_SQL": true,
+    "HOW_ANSI_OUTPUT_IS_ENABLED":"ALWAYS"
+}
+```
+
+## In vscode use this configuration to add inside of .vscode/settings.json . This wil be used for maven lifecycle on vscode 
+```json
+{
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "POSTGRES_USER",
+            "value": "postgres_user"
+        },
+        {
+            "environmentVariable": "POSTGRES_PASSWORD",
+            "value": "SuperSecret"
+        },
+        {
+            "environmentVariable": "POSTGRES_DB",
+            "value": "todoappdb"
+        },
+        {
+            "environmentVariable": "PGADMIN_DEFAULT_EMAIL",
+            "value": "user@domain.com"
+        },
+        {
+            "environmentVariable": "PGADMIN_DEFAULT_PASSWORD",
+            "value": "SuperSecret"
+        },
+        {
+            "environmentVariable": "TODO_API_VERSION",
+            "value": "0.1"
+        },
+        {
+            "environmentVariable": "APPLICATION_PORT",
+            "value": "8080"
+        },
+        {
+            "environmentVariable": "SPRING_DATASOURCE_USERNAME",
+            "value": "postgres_user"
+        },
+        {
+            "environmentVariable": "SPRING_DATASOURCE_PASSWORD",
+            "value": "SuperSecret"
+        },
+        {
+            "environmentVariable": "SPRING_DATASOURCE_URL",
+            "value": "jdbc:postgresql://localhost:5432/todoappdb"
+        },
+        {
+            "environmentVariable": "IS_FORMAT_SQL",
+            "value": "true"
+        },
+        {
+            "environmentVariable": "IS_SHOW_SQL",
+            "value": "true"
+        },
+        {
+            "environmentVariable": "HOW_ANSI_OUTPUT_IS_ENABLED",
+            "value": "ALWAYS"
+        }
+        
+    ]
+}
+
+```
 
